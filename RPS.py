@@ -43,7 +43,6 @@ PvEScores = {
     "computer":0,
 }
 
-
 # the winner functions compares the two player objects to declare the winner
 def winner(user1, user2):
     print("It's " + user1.name + "'s " + user1.choice + " against " + user2.name + "'s " + user2.choice + "! Who will win???\n")
@@ -53,17 +52,24 @@ def winner(user1, user2):
     elif user2.choice in wins[user1.choice]:
         timer(3)
         print(user1.name + " wins with " + user1.choice + "!!!")
+        scoring(user1,user2)
+    else:
+        timer(3)
+        print(user2.name + " wins with " + user2.choice + "!!!")
+        scoring(user2,user2)
+
+# the function finds the correct socring dictionary to alter
+def scoring(winner, user2):
+    if winner == user2:
         if user2.name == "Computer":
             PvEScores["computer"] += 1
         else:
             PvPScores["player2"] += 1
     else:
-        timer(3)
-        print(user2.name + " wins with " + user2.choice + "!!!")
         if user2.name == "Computer":
-            PvEScores["computer"] += 1
+            PvEScores["player1"] += 1
         else:
-            PvPScores["player2"] += 1
+            PvPScores["player1"] += 1
 
 # a function to allow for pauses in the output
 def timer(seconds):
@@ -160,6 +166,4 @@ def gameplay():
 while play:
     play = gameplay()
 
-
 # tests
-
