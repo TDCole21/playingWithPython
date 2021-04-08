@@ -1,4 +1,4 @@
-# This is a script to create the game Rock, Paper, Scissors.
+# This is a script to create a game board.
 import os, re, time, random
 
 # This function will take a user input string, and compare it to a list of accepted values.
