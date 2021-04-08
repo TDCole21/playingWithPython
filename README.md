@@ -1,1 +1,1 @@
-This are tasks from  https://www.practicepython.org/
+These are tasks from  https://www.practicepython.org/
